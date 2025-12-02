@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>القوت للقدرات</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>القوت للقدرات - النسخة الستاتيكية</title>
     
-    <!-- Standard Favicons -->
-    <meta name="theme-color" content="#f59e0b">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2997/2997235.png">
+    <!-- الأيقونات و الخطوط -->
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2997/2997235.png">
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة الأيقونات (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- إعدادات Tailwind لتطابق تصميمك -->
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -22,25 +26,19 @@
             },
             colors: {
               primary: '#f59e0b', // Amber 500
-              secondary: '#111827', // Gray 900 (Dark)
+              secondary: '#111827', // Gray 900
               dark: {
-                bg: '#0f172a',     // Slate 900
-                card: '#1e293b',   // Slate 800
-                text: '#f1f5f9'    // Slate 100
+                bg: '#0f172a',
+                card: '#1e293b',
+                text: '#f1f5f9'
               }
             },
             animation: {
-              'bounce-slow': 'bounce 2s infinite',
-              'shimmer': 'shimmer 2s infinite linear',
               'blob': 'blob 7s infinite',
               'fadeIn': 'fadeIn 0.5s ease-out forwards',
               'slideUp': 'slideUp 0.5s ease-out forwards',
             },
             keyframes: {
-              shimmer: {
-                '0%': { transform: 'translateX(-100%)' },
-                '100%': { transform: 'translateX(100%)' },
-              },
               blob: {
                 '0%': { transform: 'translate(0px, 0px) scale(1)' },
                 '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
@@ -60,56 +58,372 @@
         }
       }
     </script>
+
     <style>
-      body {
-        min-height: 100vh;
-      }
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.6);
-      }
-      .dark .glass-panel {
-        background: rgba(30, 41, 59, 0.4); /* Darker glass for dark mode */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .glass-card {
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        /* Ensure smooth transition for all properties including transform and border-color */
-        transition: all 0.3s ease-in-out !important;
-        backface-visibility: hidden;
-        transform: translateZ(0);
-      }
-      .dark .glass-card {
-        background: rgba(15, 23, 42, 0.8);
-        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* تأثير الزجاج */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease-in-out !important;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .glass-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #f59e0b;
+        }
+
+        /* إخفاء السكرول بار */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* التحكم في التبويبات */
+        .section-content {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        .section-content.active {
+            display: block;
+        }
+
+        /* تحسينات الموبايل */
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/"
-  }
-}
-</script>
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
-    <div id="root"></div>
+<body class="bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-      <body>
-    <div id="root"></div>
-    <script type="module" src="src/main.tsx"></script>
-  </body>
-</html>
+    <!-- خلفية متحركة (Blobs) -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-50 dark:opacity-20">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-300/30 dark:bg-purple-900/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-amber-300/30 dark:bg-amber-900/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-1/2 w-[500px] h-[500px] bg-pink-300/30 dark:bg-pink-900/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+    </div>
 
-  </body>
+    <!-- Sidebar (سطح المكتب) -->
+    <aside class="fixed right-0 top-0 h-full w-72 bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border-l border-gray-200 dark:border-slate-800 z-50 hidden lg:flex flex-col p-6 shadow-2xl">
+        <div class="flex items-center gap-3 px-2 mb-10">
+           <div class="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+               <span class="font-black text-xl">ق</span>
+           </div>
+           <h1 class="text-2xl font-extrabold tracking-tight">القوت <span class="text-amber-500">للقدرات</span></h1>
+        </div>
+
+        <nav class="flex-1 space-y-2">
+            <button onclick="showSection('home')" class="nav-btn w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 font-bold bg-amber-500 text-white shadow-lg shadow-amber-500/30" data-target="home">
+                <i data-lucide="home" width="22"></i> الرئيسية
+            </button>
+            <button onclick="showSection('verbal')" class="nav-btn w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 font-bold text-gray-500 hover:bg-gray-100 dark:hover:bg-slate-800" data-target="verbal">
+                <i data-lucide="book-open" width="22"></i> القسم اللفظي
+            </button>
+            <button onclick="showSection('tests')" class="nav-btn w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 font-bold text-gray-500 hover:bg-gray-100 dark:hover:bg-slate-800" data-target="tests">
+                <i data-lucide="clipboard-check" width="22"></i> الاختبارات
+            </button>
+            <button onclick="showSection('profile')" class="nav-btn w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 font-bold text-gray-500 hover:bg-gray-100 dark:hover:bg-slate-800" data-target="profile">
+                <i data-lucide="user" width="22"></i> الملف الشخصي
+            </button>
+        </nav>
+        
+        <div class="mt-auto pt-6 border-t border-gray-100 dark:border-slate-800">
+            <div class="flex items-center gap-3 p-3 rounded-2xl bg-gray-50 dark:bg-slate-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors">
+                <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-slate-700 flex items-center justify-center text-xl border border-white dark:border-slate-600 shadow-sm">
+                    🦁
+                </div>
+                <div class="flex-1 min-w-0">
+                    <p className="font-bold text-sm truncate text-gray-900 dark:text-white">ضيف القوت</p>
+                    <p className="text-xs text-amber-500 font-medium truncate">برونزي</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="lg:mr-72 min-h-screen relative z-10 pb-24 lg:pb-8">
+        
+        <!-- الهيدر (جوال) -->
+        <header class="lg:hidden flex items-center justify-between p-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg sticky top-0 z-40 border-b border-gray-100 dark:border-slate-800">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center text-white font-bold">ق</div>
+                <h1 class="font-bold text-lg">القوت</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                 <div class="flex items-center gap-1 bg-orange-50 dark:bg-orange-900/20 px-3 py-1.5 rounded-full text-orange-600 dark:text-orange-400 text-xs font-bold border border-orange-100 dark:border-orange-900/30">
+                    <i data-lucide="flame" class="text-orange-500 fill-orange-500" width="14"></i>
+                    3 يوم
+                </div>
+                <button onclick="toggleDarkMode()" class="p-2 bg-gray-100 dark:bg-slate-800 rounded-full text-gray-600 dark:text-gray-300">
+                    <i data-lucide="moon" width="20" class="dark:hidden"></i>
+                    <i data-lucide="sun" width="20" class="hidden dark:block"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="max-w-6xl mx-auto p-4 md:p-8 space-y-8">
+            
+            <!-- الهيدر (سطح المكتب) -->
+            <header class="hidden lg:flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-3xl font-black text-gray-900 dark:text-white mb-2">
+                        مرحباً، يا بطل 👋
+                    </h2>
+                    <p class="text-gray-500 dark:text-gray-400">جاهز للتحدي اليوم؟ واصل تقدمك!</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 bg-white dark:bg-slate-800 px-4 py-2 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700">
+                        <i data-lucide="flame" class="text-orange-500 fill-orange-500 animate-pulse" width="20"></i>
+                        <div>
+                            <div class="text-xs text-gray-400 font-bold">الحماس</div>
+                            <div class="font-black text-gray-900 dark:text-white">3 أيام</div>
+                        </div>
+                    </div>
+                    <button onclick="toggleDarkMode()" class="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 text-gray-600 dark:text-gray-300 hover:text-amber-500 transition-colors">
+                        <i data-lucide="moon" width="24" class="dark:hidden"></i>
+                        <i data-lucide="sun" width="24" class="hidden dark:block"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- ==== قسم الرئيسية ==== -->
+            <div id="home" class="section-content active space-y-10 animate-slideUp">
+                <div class="text-center py-6 animate-fadeIn">
+                    <h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600 text-center mb-4 tracking-tighter filter drop-shadow-sm">
+                        القوت للقدرات
+                    </h1>
+                    <p class="text-xl text-gray-500 dark:text-gray-400 font-medium">منصتك الأولى للوصول إلى 100%</p>
+                </div>
+
+                <!-- شبكة الإحصائيات -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Stat Card 1 -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100 dark:border-slate-700 flex flex-col items-center justify-center">
+                        <div class="text-amber-500 mb-4"><i data-lucide="check-circle" width="40" height="40"></i></div>
+                        <div class="text-4xl font-black mb-2 text-primary">120</div>
+                        <div class="text-lg font-bold text-gray-700 dark:text-gray-300">إجابة صحيحة</div>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100 dark:border-slate-700 flex flex-col items-center justify-center">
+                        <div class="text-amber-500 mb-4"><i data-lucide="clipboard-check" width="40" height="40"></i></div>
+                        <div class="text-4xl font-black mb-2 text-primary">5</div>
+                        <div class="text-lg font-bold text-gray-700 dark:text-gray-300">اختبارات</div>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100 dark:border-slate-700 flex flex-col items-center justify-center">
+                        <div class="text-amber-500 mb-4"><i data-lucide="trending-up" width="40" height="40"></i></div>
+                        <div class="text-4xl font-black mb-2 text-primary">برونزي</div>
+                        <div class="text-lg font-bold text-gray-700 dark:text-gray-300">المستوى</div>
+                    </div>
+                     <!-- Stat Card 4 -->
+                     <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl text-center hover:scale-105 transition-transform duration-300 shadow-lg border border-gray-100 dark:border-slate-700 flex flex-col items-center justify-center">
+                        <div class="text-amber-500 mb-4"><i data-lucide="clock" width="40" height="40"></i></div>
+                        <div class="text-4xl font-black mb-2 text-primary">45</div>
+                        <div class="text-lg font-bold text-gray-700 dark:text-gray-300">دقيقة تدريب</div>
+                    </div>
+                </div>
+
+                <!-- حكمة اليوم -->
+                <div class="max-w-4xl mx-auto px-4 mt-16 mb-20 animate-fadeIn">
+                    <div class="bg-gradient-to-r from-gray-900 to-gray-800 dark:from-slate-800 dark:to-slate-900 rounded-3xl p-8 md:p-10 text-center shadow-2xl border border-gray-700 dark:border-slate-700 relative overflow-hidden group hover:scale-[1.01] transition-transform duration-500">
+                      <div class="relative z-10">
+                        <h3 class="text-amber-500 font-bold text-lg md:text-xl mb-6 flex items-center justify-center gap-3">
+                            <i data-lucide="sparkles" width="20"></i> حكمة اليوم <i data-lucide="sparkles" width="20"></i>
+                        </h3>
+                        <p class="text-white text-xl md:text-3xl font-bold leading-relaxed font-sans drop-shadow-md">
+                            "النجاح لا يأتي بالصدفة، بل بالعمل الجاد والمثابرة."
+                        </p>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- الوصول السريع -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div onclick="showSection('verbal')" class="glass-card p-8 rounded-3xl text-center cursor-pointer hover:scale-[1.02] border border-white/60 dark:border-white/10 shadow-lg group relative overflow-hidden bg-white dark:bg-slate-800">
+                        <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📖</div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">القسم اللفظي</h3>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium">تناظر، استيعاب مقروء، وخطأ سياقي</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-card p-8 rounded-3xl text-center cursor-pointer hover:scale-[1.02] border border-white/60 dark:border-white/10 shadow-lg group relative overflow-hidden bg-white dark:bg-slate-800">
+                        <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🤖</div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">المساعد الذكي</h3>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium">قريباً.. اسأل القوت أي سؤال</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div onclick="showSection('tests')" class="glass-card p-8 rounded-3xl text-center cursor-pointer hover:scale-[1.02] border border-white/60 dark:border-white/10 shadow-lg group relative overflow-hidden bg-white dark:bg-slate-800">
+                        <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📋</div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">بنك الاختبارات</h3>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium">تصفح جميع الاختبارات المتاحة</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==== القسم اللفظي ==== -->
+            <div id="verbal" class="section-content space-y-8 animate-fadeIn">
+                <h2 class="text-3xl font-black text-gray-900 dark:text-white mb-6">القسم اللفظي</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-gray-100 dark:border-slate-700 shadow-sm">
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-primary">
+                            <i data-lucide="file-text"></i> التناظر اللفظي (تفاعلي)
+                        </h3>
+                        <div class="space-y-4">
+                            <!-- Test Item 1 -->
+                            <div class="glass-card bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-lg border border-gray-100 dark:border-slate-700 hover:scale-[1.02] hover:border-primary transition-all duration-300 cursor-pointer group">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">اختبار التناظر اللفظي (1)</h3>
+                                <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                                    <span><i data-lucide="clipboard-check" width="14" class="inline"></i> 100 سؤال</span>
+                                    <span><i data-lucide="clock" width="14" class="inline"></i> 80 دقيقة</span>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-gray-50 dark:bg-slate-700/50 text-gray-700 dark:text-gray-300 font-bold group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center gap-2">
+                                    ابدأ الاختبار
+                                </button>
+                            </div>
+                            <!-- Test Item 2 -->
+                            <div class="glass-card bg-white dark:bg-slate-800 p-6 rounded-3xl shadow-lg border border-gray-100 dark:border-slate-700 hover:scale-[1.02] hover:border-primary transition-all duration-300 cursor-pointer group">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">اختبار التناظر اللفظي (2)</h3>
+                                <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
+                                    <span><i data-lucide="clipboard-check" width="14" class="inline"></i> 100 سؤال</span>
+                                    <span><i data-lucide="clock" width="14" class="inline"></i> 80 دقيقة</span>
+                                </div>
+                                <button class="w-full py-3 rounded-xl bg-gray-50 dark:bg-slate-700/50 text-gray-700 dark:text-gray-300 font-bold group-hover:bg-primary group-hover:text-white transition-all flex items-center justify-center gap-2">
+                                    ابدأ الاختبار
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==== قسم الاختبارات ==== -->
+            <div id="tests" class="section-content space-y-8 animate-fadeIn">
+                <h2 class="text-3xl font-black text-gray-900 dark:text-white mb-6">بنك الاختبارات</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Google Form Link Mockup -->
+                    <a href="#" class="flex items-center justify-between p-4 mb-3 bg-white dark:bg-slate-800 text-gray-900 dark:text-white rounded-xl hover:translate-x-[-5px] hover:shadow-lg transition-all border border-gray-200 dark:border-slate-700 glass-card">
+                        <span class="font-medium text-lg">اختبار تجريبي 1</span>
+                        <span class="bg-amber-100 dark:bg-slate-700 text-amber-600 p-1.5 rounded-full">
+                            <i data-lucide="chevron-left" width="20"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="flex items-center justify-between p-4 mb-3 bg-white dark:bg-slate-800 text-gray-900 dark:text-white rounded-xl hover:translate-x-[-5px] hover:shadow-lg transition-all border border-gray-200 dark:border-slate-700 glass-card">
+                        <span class="font-medium text-lg">اختبار تجريبي 2</span>
+                        <span class="bg-amber-100 dark:bg-slate-700 text-amber-600 p-1.5 rounded-full">
+                            <i data-lucide="chevron-left" width="20"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ==== الملف الشخصي ==== -->
+            <div id="profile" class="section-content space-y-8 animate-fadeIn">
+                <div class="bg-white dark:bg-slate-800 rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-gray-100 dark:border-slate-700 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-amber-400 to-orange-600"></div>
+                    <div class="relative flex flex-col md:flex-row items-center md:items-end gap-6 mb-4">
+                        <div class="w-32 h-32 rounded-full bg-white dark:bg-slate-800 p-1.5 shadow-xl -mt-16 md:mt-0 z-10 relative">
+                            <div class="w-full h-full rounded-full bg-gray-100 dark:bg-slate-700 flex items-center justify-center text-4xl overflow-hidden border-4 border-white dark:border-slate-800">
+                                🦁
+                            </div>
+                        </div>
+                        <div class="text-center md:text-right flex-1 pb-2 w-full">
+                            <h2 class="text-3xl font-black text-gray-900 dark:text-white mb-1">ضيف القوت</h2>
+                            <p class="text-gray-500 dark:text-gray-400 font-medium">guest@alqut.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- الناف بار (موبايل) -->
+    <nav class="fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-800 p-3 z-50 lg:hidden flex justify-around items-center pb-safe">
+        <button onclick="showSection('home')" class="nav-btn-mobile flex flex-col items-center gap-1 transition-colors text-amber-500" data-target="home">
+            <i data-lucide="home" width="24"></i>
+            <span class="text-[10px] font-bold">الرئيسية</span>
+        </button>
+        <button onclick="showSection('tests')" class="nav-btn-mobile flex flex-col items-center gap-1 transition-colors text-gray-400" data-target="tests">
+            <i data-lucide="clipboard-check" width="24"></i>
+            <span class="text-[10px] font-bold">اختبارات</span>
+        </button>
+        <button onclick="showSection('verbal')" class="nav-btn-mobile flex flex-col items-center gap-1 transition-colors text-gray-400" data-target="verbal">
+            <i data-lucide="book-open" width="24"></i>
+            <span class="text-[10px] font-bold">لفظي</span>
+        </button>
+        <button onclick="showSection('profile')" class="nav-btn-mobile flex flex-col items-center gap-1 transition-colors text-gray-400" data-target="profile">
+            <i data-lucide="user" width="24"></i>
+            <span class="text-[10px] font-bold">حسابي</span>
+        </button>
+    </nav>
+
+    <!-- JavaScript للتحكم في الصفحة -->
+    <script>
+        // تهيئة الأيقونات
+        lucide.createIcons();
+
+        // منطق التبويبات
+        function showSection(sectionId) {
+            // إخفاء كل الأقسام
+            document.querySelectorAll('.section-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            // إظهار القسم المطلوب
+            document.getElementById(sectionId).classList.add('active');
+
+            // تحديث أزرار الناف بار (ديسك توب)
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                if (btn.dataset.target === sectionId) {
+                    btn.className = "nav-btn w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 font-bold bg-amber-500 text-white shadow-lg shadow-amber-500/30";
+                } else {
+                    btn.className = "nav-btn w-full flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 font-bold text-gray-500 hover:bg-gray-100 dark:hover:bg-slate-800";
+                }
+            });
+
+            // تحديث أزرار الناف بار (موبايل)
+            document.querySelectorAll('.nav-btn-mobile').forEach(btn => {
+                if (btn.dataset.target === sectionId) {
+                    btn.className = "nav-btn-mobile flex flex-col items-center gap-1 transition-colors text-amber-500";
+                } else {
+                    btn.className = "nav-btn-mobile flex flex-col items-center gap-1 transition-colors text-gray-400 dark:text-gray-500";
+                }
+            });
+
+            // إعادة السكرول للأعلى
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // الوضع الليلي
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // تطبيق الثيم المحفوظ
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body>
 </html>
