@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>القوت للقدرات</title>
+    
+    <!-- Standard Favicons -->
+    <meta name="theme-color" content="#f59e0b">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2997/2997235.png">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2997/2997235.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Tajawal', 'sans-serif'],
+            },
+            colors: {
+              primary: '#f59e0b', // Amber 500
+              secondary: '#111827', // Gray 900 (Dark)
+              dark: {
+                bg: '#0f172a',     // Slate 900
+                card: '#1e293b',   // Slate 800
+                text: '#f1f5f9'    // Slate 100
+              }
+            },
+            animation: {
+              'bounce-slow': 'bounce 2s infinite',
+              'shimmer': 'shimmer 2s infinite linear',
+              'blob': 'blob 7s infinite',
+              'fadeIn': 'fadeIn 0.5s ease-out forwards',
+              'slideUp': 'slideUp 0.5s ease-out forwards',
+            },
+            keyframes: {
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        min-height: 100vh;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      .dark .glass-panel {
+        background: rgba(30, 41, 59, 0.4); /* Darker glass for dark mode */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        /* Ensure smooth transition for all properties including transform and border-color */
+        transition: all 0.3s ease-in-out !important;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .dark .glass-card {
+        background: rgba(15, 23, 42, 0.8);
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
